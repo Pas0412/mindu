@@ -18,5 +18,16 @@ export default defineConfig({
 	],
 	optimizeDeps: {
 		include: ['schart.js']
-	}
+	},
+	// devSever: {
+	// 	proxy: {
+	// 		'/api': {
+	// 			target: 'http://localhost:8084',
+	// 			changeOrigin: true,
+	// 			pathRewrite: {
+	// 				'^/api': ''
+	// 			}
+	// 		}
+	// 	}
+	// }
 });

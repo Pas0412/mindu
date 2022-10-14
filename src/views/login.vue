@@ -39,6 +39,8 @@ import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import type { FormInstance, FormRules } from 'element-plus';
 import { Lock, User } from '@element-plus/icons-vue';
+// import { loginApi } from '../api/login.js';
+import axios from "axios";
 
 interface LoginInfo {
 	username: string;
@@ -47,7 +49,7 @@ interface LoginInfo {
 
 const router = useRouter();
 const param = reactive<LoginInfo>({
-	username: '闹闹',
+	username: 'naonao',
 	password: '123123'
 });
 
@@ -67,14 +69,31 @@ const submitForm = (formEl: FormInstance | undefined) => {
 	if (!formEl) return;
 	formEl.validate((valid: boolean) => {
 		if (valid) {
-			ElMessage.success('登录成功');
-			localStorage.setItem('ms_username', param.username);
-			const keys = permiss.defaultList[param.username == 'admin' ? 'admin' : 'user'];
-			permiss.handleSet(keys);
-			localStorage.setItem('ms_keys', JSON.stringify(keys));
-			router.push('/');
+      let r;
+			axios({
+        method: "post",
+        url: "http://localhost:8084/user/login",
+        data: JSON.stringify(param),
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8'
+        }
+      }).then(res => {
+        r = res.data;
+        console.log(r.code);
+        console.log(r.data);
+        if(r.code == 1){
+          ElMessage.success('登录成功');
+          localStorage.setItem('ms_username', param.username);
+          const keys = permiss.defaultList[r.isadmin == 1 ? 'admin' : 'user'];
+          permiss.handleSet(keys);
+          localStorage.setItem('ms_keys', JSON.stringify(keys));
+          console.log(param);
+          console.log(JSON.stringify(param));
+          router.push('/');
+        }
+      });
 		} else {
-			ElMessage.error('登录成功');
+			ElMessage.error('登录失败');
 			return false;
 		}
 	});

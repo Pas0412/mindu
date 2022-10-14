@@ -65,7 +65,7 @@ const items = [
 	{
 		icon: 'Calendar',
 		index: '/table',
-		title: '基础表格',
+		title: '用户管理',
 		permiss: '2'
 	},
 	{
@@ -132,7 +132,19 @@ const items = [
 		index: '/donate',
 		title: '支持作者',
 		permiss: '14'
-	}
+	},
+  {
+    icon: 'Calendar',
+    index: '/sdgt',
+    title: '水调歌头',
+    permiss: '15'
+  },
+  {
+    icon: 'Calendar',
+    index: '/queryConclusion',
+    title: '汇总',
+    permiss: '16'
+  }
 ];
 
 const route = useRoute();

@@ -28,6 +28,22 @@ const routes:RouteRecordRaw[] = [
                 },
                 component: () => import ( /* webpackChunkName: "table" */ "../views/table.vue")
             }, {
+                path: "/sdgt",
+                name: "sdgtForm",
+                meta: {
+                    title: '表格',
+                    permiss: '15'
+                },
+                component: () => import ( /* webpackChunkName: "table" */ "../views/sdgt.vue")
+            }, {
+                path: "/queryConclusion",
+                name: "queryConclusion",
+                meta: {
+                    title: '汇总',
+                    permiss: '16'
+                },
+                component: () => import ( /* webpackChunkName: "queryConclusion" */ "../views/queryConclusion.vue")
+            }, {
                 path: "/charts",
                 name: "basecharts",
                 meta: {
@@ -131,7 +147,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    document.title = `${to.meta.title} | vue-manage-system`;
+    document.title = `${to.meta.title} | 闽都置业后台管理系统`;
     const role = localStorage.getItem('ms_username');
     const permiss = usePermissStore();
     if (!role && to.path !== '/login') {
