@@ -68,6 +68,64 @@ const items = [
 		title: '用户管理',
 		permiss: '2'
 	},
+  {
+    icon: 'Edit',
+    index: '4',
+    title: '表格查询',
+    permiss: '25',
+    subs: [
+      {
+        index: '/queryConclusion',
+        title: '汇总',
+        permiss: '16'
+      },
+      {
+        index: '/leaseMonthly',
+        title: '月度汇总',
+        permiss: '24'
+      },
+      {
+        index: '/sdgt',
+        title: '水调歌头',
+        permiss: '15'
+      },
+      {
+        index: '/zmjf',
+        title: '中闽建发',
+        permiss: '17'
+      },
+      {
+        index: '/hxct',
+        title: '华兴创投',
+        permiss: '18'
+      },
+      {
+        index: '/hxjt',
+        title: '华兴集团',
+        permiss: '19'
+      },
+      {
+        index: '/httz',
+        title: '华投投资',
+        permiss: '20'
+      },
+      {
+        index: '/fttz',
+        title: '福投投资',
+        permiss: '21'
+      },
+      {
+        index: '/mdzy',
+        title: '闽都置业',
+        permiss: '22'
+      },
+      {
+        index: '/groupAuth',
+        title: '集团公司委托管理',
+        permiss: '23'
+      }
+    ]
+  },
 	{
 		icon: 'DocumentCopy',
 		index: '/tabs',
@@ -133,18 +191,6 @@ const items = [
 		title: '支持作者',
 		permiss: '14'
 	},
-  {
-    icon: 'Calendar',
-    index: '/sdgt',
-    title: '水调歌头',
-    permiss: '15'
-  },
-  {
-    icon: 'Calendar',
-    index: '/queryConclusion',
-    title: '汇总',
-    permiss: '16'
-  }
 ];
 
 const route = useRoute();

@@ -84,8 +84,10 @@ const submitForm = (formEl: FormInstance | undefined) => {
         if(r.code == 1){
           ElMessage.success('登录成功');
           localStorage.setItem('ms_username', param.username);
-          const keys = permiss.defaultList[r.isadmin == 1 ? 'admin' : 'user'];
+          const keys = permiss.defaultList[r.data.isadmin == 1 ? "admin" : "user"];
           permiss.handleSet(keys);
+          console.log(keys);
+          console.log(JSON.stringify(keys));
           localStorage.setItem('ms_keys', JSON.stringify(keys));
           console.log(param);
           console.log(JSON.stringify(param));

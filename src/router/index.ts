@@ -34,7 +34,7 @@ const routes:RouteRecordRaw[] = [
                     title: '表格',
                     permiss: '15'
                 },
-                component: () => import ( /* webpackChunkName: "table" */ "../views/sdgt.vue")
+                component: () => import ( /* webpackChunkName: "table" */ "../views/forms/sdgt.vue")
             }, {
                 path: "/queryConclusion",
                 name: "queryConclusion",
@@ -42,8 +42,72 @@ const routes:RouteRecordRaw[] = [
                     title: '汇总',
                     permiss: '16'
                 },
-                component: () => import ( /* webpackChunkName: "queryConclusion" */ "../views/queryConclusion.vue")
+                component: () => import ( /* webpackChunkName: "queryConclusion" */ "../views/forms/queryConclusion.vue")
             }, {
+                path: "/zmjf",
+                name: "zmjf",
+                meta: {
+                    title: '中闽',
+                    permiss: '17'
+                },
+                component: () => import ( /* webpackChunkName: "zmjf" */ "../views/forms/zmjf.vue")
+            }, {
+                path: "/hxct",
+                name: "hxct",
+                meta: {
+                    title: '华创',
+                    permiss: '18'
+                },
+                component: () => import ( /* webpackChunkName: "hxct" */ "../views/forms/hxct.vue")
+            }, {
+                path: "/hxjt",
+                name: "hxjt",
+                meta: {
+                    title: '华兴',
+                    permiss: '19'
+                },
+                component: () => import ( /* webpackChunkName: "hxjt" */ "../views/forms/hxjt.vue")
+            },{
+                path: "/httz",
+                name: "httz",
+                meta: {
+                    title: '华投',
+                    permiss: '20'
+                },
+                component: () => import ( /* webpackChunkName: "httz" */ "../views/forms/httz.vue")
+            },{
+                path: "/fttz",
+                name: "fttz",
+                meta: {
+                    title: '福投',
+                    permiss: '21'
+                },
+                component: () => import ( /* webpackChunkName: "fttz" */ "../views/forms/fttz.vue")
+            },{
+                path: "/mdzy",
+                name: "mdzy",
+                meta: {
+                    title: '闽都',
+                    permiss: '22'
+                },
+                component: () => import ( /* webpackChunkName: "mdzy" */ "../views/forms/mdzy.vue")
+            },{
+                path: "/groupAuth",
+                name: "groupAuth",
+                meta: {
+                    title: '集团公司委托',
+                    permiss: '23'
+                },
+                component: () => import ( /* webpackChunkName: "groupAuth" */ "../views/forms/groupAuth.vue")
+            },{
+                path: "/leaseMonthly",
+                name: "leaseMonthly",
+                meta: {
+                    title: '月度汇总',
+                    permiss: '24'
+                },
+                component: () => import ( /* webpackChunkName: "leaseMonthly" */ "../views/forms/leaseMonthly.vue")
+            },{
                 path: "/charts",
                 name: "basecharts",
                 meta: {

@@ -1,10 +1,14 @@
 <template>
 	<div class="container">
 		<div class="plugins-tips">
-			如果该框架对你有帮助，那就请作者喝杯饮料吧！<el-icon><ColdDrink /></el-icon> 加微信号linxin_20探讨问题。
+			了解作者 <el-icon><ColdDrink /></el-icon> 访问作者个人网站或GitHub。
 		</div>
 		<div>
-			<img src="https://lin-xin.gitee.io/images/weixin.jpg" />
+      个人网站：<a href="https://pas0412.github.io/MyPersonalPage/">https://pas0412.github.io/MyPersonalPage/</a>
+      <br><br>
+      GitHub地址：<a href="https://github.com/Pas0412">https://github.com/Pas0412</a>
+
+<!--			<img src="https://lin-xin.gitee.io/images/weixin.jpg" />-->
 		</div>
 	</div>
 </template>
